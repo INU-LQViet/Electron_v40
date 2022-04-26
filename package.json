@@ -1,0 +1,19 @@
+{
+  "name": "electron_v30",
+  "version": "4.0.0",
+  "description": "Add mongoose database",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "lqviet",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^18.1.0",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.1",
+    "serialport": "^10.4.0",
+    "socket.io": "^4.5.0"
+  }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/lqvfavicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/socket.io.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <title>EMG control games</title>
+</head>
+<body onload="mainfunction()">
+    <section id="infor">
+        <div id="inf_div">
+            <h1>About project.</h1>
+            <p>
+                <a href="https://en.wikipedia.org/wiki/Electromyography" target="_blank">Electromyography (EMG) </a> is a  technique for evaluating 
+                and recording the electrical activity produced by skeletal muscles. The EMG can be used to control robot or game 
+                instead of the traditional devices such as keyboards,... by collecting signal from person's muscle. In particularly, 
+                EMG is the promissing choice when physical movement is not possible, such as people have injured upper limbs. 
+                This project adopts a application which controls a video game by using EMG signals. 
+                Similar project can be reference 
+                <a href="https://ieeexplore.ieee.org/abstract/document/8765983" target="_blank">[1]</a>,
+                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4996424/" target="_blank">[2]</a>,
+                <a href="https://link.springer.com/chapter/10.1007/978-3-030-61814-8_18" target="_blank">[3]</a>. 
+                The principle of application can be shown in figure 1:
+            </p>
+            <figure>
+                <img src="img/gif_1.gif" alt="The EMG principle">
+            </figure>
+            <figure>
+                <img src="img/gif_2.gif" alt="analysis">
+                <figcaption>Figure 1</figcaption>
+            </figure>
+            <p>
+                The desktop application will plot the EMG signal and use this signal to control the character of game. 
+                The position and speed of character depend on the intensity of signal (FUZZY control is used). 
+            </p>
+        </div>
+    </section>
+    <section id="Exp">
+        <div id="div_chart" class="container">
+            <h1>EMG signal</h1>
+            <p>The time serial signal of EMG signal. X-axis is the time (milliseconds) 
+                and Y-axis is the output voltage of the EMG signal (V).
+            </p>
+            <h2>Date: <span id="date"></span></h2>
+            <canvas id="chart">your brower is not support!</canvas>
+            <div >
+                <button id="startChart">ON</button>
+                <button id="resetChart">OFF</button>
+                <button id="exportData">Export</button>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Bird Game</h1>
+            <p>
+                The EMG signal is used to control the character (bird) in the bird game. 
+                The intensity of signal will effects the y-position and y-speed of the bird.
+                After the bird pass a pipe, the scores will increase 1.
+            </p>
+            <div id="div_game">
+                <canvas id="game" width="288" height="600"></canvas>
+            </div>
+            <button id="startGame">Start</button>
+        </div>
+
+    </section>
+    <section id="conclusion">
+        <div id="div_con" class="container">
+            <h1>Conclusion</h1>
+            <p>
+                This research presented a potential method to control a video game by using
+                directly the EMG signal from muscle. The application have used a simple FUZZY
+                method to convert from EMG signal to character motion in video game. In the future
+                work, multiple EMG sensors will be set up to observe more EMG signal from various 
+                muscles. Also, the machine learning algorithm will be set up to recogize hand's gestures.
+                Moreover, the EMG can be used to control a manupulator robot like 
+                <a href="https://www.universal-robots.com/products/ur3-robot/" target="_blank">UR3</a>.
+            </p>
+        </div>
+    </section>
+    <section id="contact">
+        <div id="div_contact" class="container">
+            <h1>Contact</h1>
+            <p>For more information, please feel free to contact!</p>
+            <a class="ctlink" href="https://github.com/vuonhiendai" target="_blank"><img src="img/GitHub-Mark-32px.png" id="icon" alt="Github"></a>
+            <a class="ctlink" href="https://scholar.google.com/citations?user=FfoOgxUAAAAJ&hl=en&sortby=pubdate" target="_blank"><img src="img/google_scholar_icon_130918.png" id="icon" alt="Google scholar"></a>
+            <a class="ctlink" href="https://www.researchgate.net/profile/Viet-Luong" target="_blank"><img src="img/researchgate_icon_130843.png" id="icon" alt="Research gate"></a>
+        </div>
+
+    </section>
+    
+    <script src="js/plot_chart.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/css_active.js"></script>
+</body>
+</html>
+
