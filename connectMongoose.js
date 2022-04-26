@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-urlLink = 'mongodb+srv://lqviet:vancuong@emg0.eretb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+urlLink = 'mongodb+srv://lqviet:*******@emg0.eretb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(urlLink, {
     useUnifiedTopology: true,
